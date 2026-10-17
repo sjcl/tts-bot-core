@@ -64,7 +64,7 @@ async fn main() -> Result<()> {
     let services = TtsServices::new();
     let started = Instant::now();
     services
-        .initialize_by_config(&config.tts_services)
+        .initialize(&config)
         .await
         .context("failed to initialize the tts services")?;
     info!(
